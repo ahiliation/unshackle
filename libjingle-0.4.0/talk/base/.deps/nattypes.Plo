@@ -1,0 +1,20 @@
+nattypes.lo nattypes.o: nattypes.cc /usr/include/c++/4.2/cassert \
+  /usr/include/assert.h /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
+  /usr/include/gnu/stubs-64.h ../../talk/base/nattypes.h
+
+/usr/include/c++/4.2/cassert:
+
+/usr/include/assert.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+../../talk/base/nattypes.h:

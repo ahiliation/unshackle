@@ -1,0 +1,5 @@
+jackcard.lo jackcard.o: jackcard.c jackcard.h ../../../config.h
+
+jackcard.h:
+
+../../../config.h:
