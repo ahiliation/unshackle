@@ -24,6 +24,7 @@
 
 #include <mscodec.h>
 #include <speex.h>
+#include <speex_preprocess.h>
 
 struct _MSSpeexEnc
 {

@@ -51,7 +51,7 @@ void ms_speex_enc_init(MSSpeexEnc *obj)
 	obj->outq[0]=NULL;
 	obj->frequency=8000;
 	obj->bitrate=30000;
-  obj->initialized=0;
+	obj->initialized=0;
 }
 
 void ms_speex_enc_init_core(MSSpeexEnc *obj,const SpeexMode *mode, gint bitrate)
@@ -98,9 +98,16 @@ void ms_speex_enc_init_core(MSSpeexEnc *obj,const SpeexMode *mode, gint bitrate)
 	
 	obj->initialized=1;
 
-	/* preproc initialization */
+	/* preproc initialization -- assuming that the sampling rate is known at this point */
 	obj->speex_preproc_state = speex_preprocess_state_init (frame_size, obj->frequency);
 	fprintf (stderr, "freq = %d\n", obj->frequency);
+
+	/* denoiser On */
+	tmp = 1;
+	speex_preprocess_ctl(obj->speex_preproc_state, SPEEX_PREPROCESS_SET_DENOISE, &tmp);
+
+	/* AGC */
+	speex_preprocess_ctl(obj->speex_preproc_state, SPEEX_PREPROCESS_SET_AGC, &tmp);
 }
 
 /* must be called before the encoder is running*/
@@ -187,6 +194,10 @@ void ms_speex_enc_process(MSSpeexEnc *obj)
 	
 	ms_fifo_get_read_ptr(inf,gran,(void**)&input);
 	g_return_if_fail(input!=NULL);
+
+	/* pre-proc */
+	speex_preprocess_run(obj->speex_preproc_state, (short*)input);
+
 	/* encode */
 	speex_bits_reset(&obj->bits);
 	speex_encode_int(obj->speex_state,(short*)input,&obj->bits);

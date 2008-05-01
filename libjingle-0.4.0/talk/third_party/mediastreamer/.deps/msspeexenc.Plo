@@ -67,7 +67,8 @@ msspeexenc.lo msspeexenc.o: msspeexenc.c ../../../config.h \
   /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
   msfifo.h msbuffer.h msqueue.h /usr/include/speex/speex.h \
   /usr/include/speex/speex_bits.h /usr/include/speex/speex_types.h \
-  /usr/include/speex/speex_config_types.h ms.h msfilter.h mssync.h
+  /usr/include/speex/speex_config_types.h \
+  /usr/include/speex/speex_preprocess.h ms.h msfilter.h mssync.h
 
 ../../../config.h:
 
@@ -282,6 +283,8 @@ msqueue.h:
 /usr/include/speex/speex_types.h:
 
 /usr/include/speex/speex_config_types.h:
+
+/usr/include/speex/speex_preprocess.h:
 
 ms.h:
 
