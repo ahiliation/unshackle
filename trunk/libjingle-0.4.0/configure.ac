@@ -89,7 +89,7 @@ if test "$speex_found" = "no" ; then
 AC_MSG_WARN([Could not find a libspeex version that have the speex_encode_int() function. Please install libspeex=1.0.5 or libspeex>=1.1.6 from http://www.speex.org/])
 else
 SPEEX_CFLAGS=" -I${speex_prefix}/include -I${speex_prefix}/include/speex"
-SPEEX_LIBS="-L${speex_prefix}/lib -L${speex_prefix}/speex/lib -lspeex -lm"
+SPEEX_LIBS="-L${speex_prefix}/lib -L${speex_prefix}/speex/lib -lspeex -lspeexdsp -lm"
 CPPFLAGS_save=$CPPFLAGS
 CPPFLAGS=$SPEEX_CFLAGS
 LDFLAGS_save=$LDFLAGS

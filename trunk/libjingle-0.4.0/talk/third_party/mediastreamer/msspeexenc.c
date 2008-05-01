@@ -60,7 +60,8 @@ void ms_speex_enc_init_core(MSSpeexEnc *obj,const SpeexMode *mode, gint bitrate)
 	gchar *proc_vendor;
 	int tmp;
 	int frame_size;
-	
+	float ftmp;
+
 	obj->speex_state=speex_encoder_init(mode);
 	speex_bits_init(&obj->bits);
 	
@@ -107,7 +108,10 @@ void ms_speex_enc_init_core(MSSpeexEnc *obj,const SpeexMode *mode, gint bitrate)
 	speex_preprocess_ctl(obj->speex_preproc_state, SPEEX_PREPROCESS_SET_DENOISE, &tmp);
 
 	/* AGC */
+	ftmp = 30000;
 	speex_preprocess_ctl(obj->speex_preproc_state, SPEEX_PREPROCESS_SET_AGC, &tmp);
+	speex_preprocess_ctl(obj->speex_preproc_state, SPEEX_PREPROCESS_SET_AGC_LEVEL, &ftmp);
+	
 }
 
 /* must be called before the encoder is running*/
