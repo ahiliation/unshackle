@@ -31,6 +31,7 @@ struct _MSSpeexEnc
 	MSFifo *inf[1];
 	MSQueue *outq[1];	/* speex has an output q because it can be variable bit rate */
 	void *speex_state;
+	void *speex_preproc_state;
 	SpeexBits bits;
 	int frequency;
 	int bitrate;

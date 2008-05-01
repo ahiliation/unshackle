@@ -19,6 +19,7 @@
 */
 
 #include <config.h>
+#include <stdio.h>
 
 #ifdef HAVE_SPEEX
 
@@ -96,6 +97,10 @@ void ms_speex_enc_init_core(MSSpeexEnc *obj,const SpeexMode *mode, gint bitrate)
 	ms_trace("ms_speex_init: using frame size of %i.",MS_FILTER(obj)->r_mingran);
 	
 	obj->initialized=1;
+
+	/* preproc initialization */
+	obj->speex_preproc_state = speex_preprocess_state_init (frame_size, obj->frequency);
+	fprintf (stderr, "freq = %d\n", obj->frequency);
 }
 
 /* must be called before the encoder is running*/
@@ -157,6 +162,7 @@ void ms_speex_enc_uninit_core(MSSpeexEnc *obj)
 {
 	if (obj->initialized){
 		speex_encoder_destroy(obj->speex_state);
+		speex_preprocess_state_destroy(obj->speex_preproc_state);
 		obj->initialized=0;
 	}
 }
