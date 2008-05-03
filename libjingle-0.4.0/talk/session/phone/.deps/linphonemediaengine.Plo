@@ -67,27 +67,32 @@ linphonemediaengine.lo linphonemediaengine.o: linphonemediaengine.cc \
   ../../../talk/third_party/mediastreamer/msbuffer.h \
   ../../../talk/third_party/mediastreamer/msqueue.h \
   ../../../talk/third_party/mediastreamer/mssync.h \
-  /usr/local/include/ortp/ortp.h /usr/local/include/ortp/rtpsession.h \
-  /usr/local/include/ortp/rtpport.h /usr/local/include/ortp/ortp-config.h \
-  /usr/include/sys/time.h /usr/include/sys/select.h \
+  /usr/include/ortp/ortp.h /usr/include/ortp/rtpsession.h \
+  /usr/include/ortp/port.h /usr/include/sys/types.h /usr/include/endian.h \
+  /usr/include/bits/endian.h /usr/include/sys/select.h \
   /usr/include/bits/select.h /usr/include/bits/sigset.h \
-  /usr/local/include/ortp/rtp.h /usr/local/include/ortp/payloadtype.h \
-  /usr/local/include/ortp/sessionset.h /usr/include/sys/types.h \
-  /usr/include/endian.h /usr/include/bits/endian.h \
   /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h \
-  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
-  /usr/include/bits/environments.h /usr/include/bits/confname.h \
-  /usr/include/getopt.h /usr/local/include/ortp/rtcp.h \
-  /usr/local/include/ortp/str_utils.h \
-  /usr/local/include/ortp/rtpsignaltable.h /usr/include/stdio.h \
-  /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
-  /usr/include/bits/sys_errlist.h /usr/include/sys/socket.h \
-  /usr/include/sys/uio.h /usr/include/bits/uio.h \
-  /usr/include/bits/socket.h /usr/include/bits/sockaddr.h \
-  /usr/include/asm/socket.h /usr/include/asm/sockios.h \
-  /usr/include/netinet/in.h /usr/include/stdint.h \
-  /usr/include/bits/wchar.h /usr/include/bits/in.h \
-  /usr/include/bits/byteswap.h /usr/include/arpa/inet.h \
+  /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
+  /usr/include/signal.h /usr/include/bits/setjmp.h /usr/include/unistd.h \
+  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+  /usr/include/bits/confname.h /usr/include/getopt.h /usr/include/fcntl.h \
+  /usr/include/bits/fcntl.h /usr/include/bits/uio.h \
+  /usr/include/sys/stat.h /usr/include/bits/stat.h /usr/include/stdlib.h \
+  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+  /usr/include/alloca.h /usr/include/stdio.h /usr/include/libio.h \
+  /usr/include/_G_config.h /usr/include/wchar.h \
+  /usr/include/bits/sys_errlist.h /usr/include/stdint.h \
+  /usr/include/bits/wchar.h /usr/include/sys/socket.h \
+  /usr/include/sys/uio.h /usr/include/bits/socket.h \
+  /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
+  /usr/include/asm/sockios.h /usr/include/netinet/in.h \
+  /usr/include/bits/in.h /usr/include/bits/byteswap.h \
+  /usr/include/arpa/inet.h /usr/include/sys/time.h /usr/include/netdb.h \
+  /usr/include/rpc/netdb.h /usr/include/bits/siginfo.h \
+  /usr/include/bits/netdb.h /usr/include/ortp/rtp.h \
+  /usr/include/ortp/str_utils.h /usr/include/ortp/payloadtype.h \
+  /usr/include/ortp/sessionset.h /usr/include/ortp/rtcp.h \
+  /usr/include/ortp/rtpsignaltable.h /usr/include/ortp/event.h \
   ../../../talk/third_party/mediastreamer/msrtpsend.h \
   ../../../talk/third_party/mediastreamer/ms.h \
   ../../../talk/third_party/mediastreamer/msosswrite.h \
@@ -110,11 +115,7 @@ linphonemediaengine.lo linphonemediaengine.o: linphonemediaengine.cc \
   /usr/local/include/ilbc/iLBC_decode.h \
   /usr/local/include/ilbc/iLBC_define.h \
   ../../../talk/third_party/mediastreamer/msspeexdec.h \
-  /usr/local/include/ortp/telephonyevents.h /usr/include/netdb.h \
-  /usr/include/rpc/netdb.h /usr/include/bits/siginfo.h \
-  /usr/include/bits/netdb.h /usr/include/fcntl.h \
-  /usr/include/bits/fcntl.h /usr/include/sys/stat.h \
-  /usr/include/bits/stat.h /usr/include/c++/4.2/iostream \
+  /usr/include/ortp/telephonyevents.h /usr/include/c++/4.2/iostream \
   /usr/include/c++/4.2/x86_64-linux-gnu/bits/c++config.h \
   /usr/include/c++/4.2/x86_64-linux-gnu/bits/os_defines.h \
   /usr/include/c++/4.2/x86_64-linux-gnu/bits/cpu_defines.h \
@@ -129,8 +130,6 @@ linphonemediaengine.lo linphonemediaengine.o: linphonemediaengine.cc \
   /usr/include/c++/4.2/x86_64-linux-gnu/bits/c++io.h \
   /usr/include/c++/4.2/x86_64-linux-gnu/bits/gthr.h \
   /usr/include/c++/4.2/x86_64-linux-gnu/bits/gthr-default.h \
-  /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
-  /usr/include/signal.h /usr/include/bits/setjmp.h \
   /usr/include/c++/4.2/cctype /usr/include/ctype.h \
   /usr/include/c++/4.2/bits/stringfwd.h \
   /usr/include/c++/4.2/bits/postypes.h /usr/include/c++/4.2/cwchar \
@@ -138,9 +137,7 @@ linphonemediaengine.lo linphonemediaengine.o: linphonemediaengine.cc \
   /usr/include/c++/4.2/exception_defines.h /usr/include/c++/4.2/exception \
   /usr/include/c++/4.2/bits/char_traits.h \
   /usr/include/c++/4.2/bits/stl_algobase.h /usr/include/c++/4.2/climits \
-  /usr/include/c++/4.2/cstdlib /usr/include/stdlib.h \
-  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
-  /usr/include/alloca.h /usr/include/c++/4.2/bits/stl_pair.h \
+  /usr/include/c++/4.2/cstdlib /usr/include/c++/4.2/bits/stl_pair.h \
   /usr/include/c++/4.2/bits/cpp_type_traits.h \
   /usr/include/c++/4.2/ext/type_traits.h /usr/include/c++/4.2/utility \
   /usr/include/c++/4.2/bits/stl_relops.h \
@@ -399,27 +396,11 @@ linphonemediaengine.lo linphonemediaengine.o: linphonemediaengine.cc \
 
 ../../../talk/third_party/mediastreamer/mssync.h:
 
-/usr/local/include/ortp/ortp.h:
+/usr/include/ortp/ortp.h:
 
-/usr/local/include/ortp/rtpsession.h:
+/usr/include/ortp/rtpsession.h:
 
-/usr/local/include/ortp/rtpport.h:
-
-/usr/local/include/ortp/ortp-config.h:
-
-/usr/include/sys/time.h:
-
-/usr/include/sys/select.h:
-
-/usr/include/bits/select.h:
-
-/usr/include/bits/sigset.h:
-
-/usr/local/include/ortp/rtp.h:
-
-/usr/local/include/ortp/payloadtype.h:
-
-/usr/local/include/ortp/sessionset.h:
+/usr/include/ortp/port.h:
 
 /usr/include/sys/types.h:
 
@@ -427,9 +408,25 @@ linphonemediaengine.lo linphonemediaengine.o: linphonemediaengine.cc \
 
 /usr/include/bits/endian.h:
 
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
 /usr/include/sys/sysmacros.h:
 
 /usr/include/bits/pthreadtypes.h:
+
+/usr/include/pthread.h:
+
+/usr/include/sched.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/signal.h:
+
+/usr/include/bits/setjmp.h:
 
 /usr/include/unistd.h:
 
@@ -441,11 +438,23 @@ linphonemediaengine.lo linphonemediaengine.o: linphonemediaengine.cc \
 
 /usr/include/getopt.h:
 
-/usr/local/include/ortp/rtcp.h:
+/usr/include/fcntl.h:
 
-/usr/local/include/ortp/str_utils.h:
+/usr/include/bits/fcntl.h:
 
-/usr/local/include/ortp/rtpsignaltable.h:
+/usr/include/bits/uio.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/bits/stat.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/alloca.h:
 
 /usr/include/stdio.h:
 
@@ -457,11 +466,13 @@ linphonemediaengine.lo linphonemediaengine.o: linphonemediaengine.cc \
 
 /usr/include/bits/sys_errlist.h:
 
+/usr/include/stdint.h:
+
+/usr/include/bits/wchar.h:
+
 /usr/include/sys/socket.h:
 
 /usr/include/sys/uio.h:
-
-/usr/include/bits/uio.h:
 
 /usr/include/bits/socket.h:
 
@@ -473,15 +484,35 @@ linphonemediaengine.lo linphonemediaengine.o: linphonemediaengine.cc \
 
 /usr/include/netinet/in.h:
 
-/usr/include/stdint.h:
-
-/usr/include/bits/wchar.h:
-
 /usr/include/bits/in.h:
 
 /usr/include/bits/byteswap.h:
 
 /usr/include/arpa/inet.h:
+
+/usr/include/sys/time.h:
+
+/usr/include/netdb.h:
+
+/usr/include/rpc/netdb.h:
+
+/usr/include/bits/siginfo.h:
+
+/usr/include/bits/netdb.h:
+
+/usr/include/ortp/rtp.h:
+
+/usr/include/ortp/str_utils.h:
+
+/usr/include/ortp/payloadtype.h:
+
+/usr/include/ortp/sessionset.h:
+
+/usr/include/ortp/rtcp.h:
+
+/usr/include/ortp/rtpsignaltable.h:
+
+/usr/include/ortp/event.h:
 
 ../../../talk/third_party/mediastreamer/msrtpsend.h:
 
@@ -529,23 +560,7 @@ linphonemediaengine.lo linphonemediaengine.o: linphonemediaengine.cc \
 
 ../../../talk/third_party/mediastreamer/msspeexdec.h:
 
-/usr/local/include/ortp/telephonyevents.h:
-
-/usr/include/netdb.h:
-
-/usr/include/rpc/netdb.h:
-
-/usr/include/bits/siginfo.h:
-
-/usr/include/bits/netdb.h:
-
-/usr/include/fcntl.h:
-
-/usr/include/bits/fcntl.h:
-
-/usr/include/sys/stat.h:
-
-/usr/include/bits/stat.h:
+/usr/include/ortp/telephonyevents.h:
 
 /usr/include/c++/4.2/iostream:
 
@@ -591,16 +606,6 @@ linphonemediaengine.lo linphonemediaengine.o: linphonemediaengine.cc \
 
 /usr/include/c++/4.2/x86_64-linux-gnu/bits/gthr-default.h:
 
-/usr/include/pthread.h:
-
-/usr/include/sched.h:
-
-/usr/include/bits/sched.h:
-
-/usr/include/signal.h:
-
-/usr/include/bits/setjmp.h:
-
 /usr/include/c++/4.2/cctype:
 
 /usr/include/ctype.h:
@@ -626,14 +631,6 @@ linphonemediaengine.lo linphonemediaengine.o: linphonemediaengine.cc \
 /usr/include/c++/4.2/climits:
 
 /usr/include/c++/4.2/cstdlib:
-
-/usr/include/stdlib.h:
-
-/usr/include/bits/waitflags.h:
-
-/usr/include/bits/waitstatus.h:
-
-/usr/include/alloca.h:
 
 /usr/include/c++/4.2/bits/stl_pair.h:
 

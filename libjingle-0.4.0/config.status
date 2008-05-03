@@ -629,8 +629,8 @@ s,@ALSA_LIBS@,|#_!!_#|-lasound,g
 s,@PKG_CONFIG@,|#_!!_#|/usr/bin/pkg-config,g
 s,@GLIB_CFLAGS@,|#_!!_#|-pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  ,g
 s,@GLIB_LIBS@,|#_!!_#|-Wl\,--export-dynamic -pthread -lgmodule-2.0 -ldl -lgthread-2.0 -lrt -lglib-2.0  ,g
-s,@ORTP_CFLAGS@,|#_!!_#|-D_REENTRANT -I/usr/local/include  ,g
-s,@ORTP_LIBS@,|#_!!_#|-L/usr/local/lib -lortp -lpthread  ,g
+s,@ORTP_CFLAGS@,|#_!!_#|-D_REENTRANT -DORTP_INET6  ,g
+s,@ORTP_LIBS@,|#_!!_#|-lortp -lpthread  ,g
 s,@SPEEX_CFLAGS@,|#_!!_#| -I/usr/include -I/usr/include/speex,g
 s,@SPEEX_LIBS@,|#_!!_#|-L/usr/lib -L/usr/speex/lib -lspeex -lspeexdsp -lm,g
 s,@ILBC_CFLAGS@,|#_!!_#| -I/usr/local/include/ilbc,g
