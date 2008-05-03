@@ -44,6 +44,10 @@ const uint32 MSG_DISABLE = 2;
 const uint32 MSG_MUTE = 3;
 const uint32 MSG_UNMUTE = 4;
 const uint32 MSG_SETSENDCODEC = 5;
+const uint32 MSG_PLAYRINGBACKSTART = 6;
+const uint32 MSG_PLAYRINGBACKSTOP = 7;
+const uint32 MSG_PLAYRINGSTART = 8;
+const uint32 MSG_PLAYRINGSTOP = 9;
 
 
 class ChannelManager;

@@ -211,7 +211,8 @@ void ms_speex_dec_process(MSSpeexDec *obj)
 		/* we have a missing packet */
 		speex_decode_int(obj->speex_state,NULL,(short*)output);
 	}
-	ms_message_destroy(m);
+	
+	ms_message_destroy(m); //vu3rdd
 	
 }
 

@@ -94,6 +94,18 @@ void VoiceChannel::OnMessage(talk_base::Message *pmsg) {
   case MSG_SETSENDCODEC:
     SetSendCodec_w();
     break;
+  case MSG_PLAYRINGBACKSTART:
+    printf ("started playing ring back\n");
+    break;
+  case MSG_PLAYRINGBACKSTOP:
+    printf ("stopped playing ring back\n");
+    break;
+  case MSG_PLAYRINGSTART:
+    printf ("started playing ringtone\n");
+    break;
+  case MSG_PLAYRINGSTOP:
+    printf ("stopped playing ringtone\n");
+    break;
   }
 }
 
@@ -118,6 +130,20 @@ void VoiceChannel::OnSessionState(Session* session, Session::State state) {
       (state == Session::STATE_RECEIVEDINITIATE)) {
     channel_manager_->worker_thread()->Post(this, MSG_SETSENDCODEC);
   }
+
+  // vu3rdd - place to handle ring wav file playing
+  if (state == Session::STATE_SENTINITIATE)
+    channel_manager_->worker_thread()->Post(this, MSG_PLAYRINGBACKSTART);
+
+  if (state == Session::STATE_RECEIVEDACCEPT)
+    channel_manager_->worker_thread()->Post(this, MSG_PLAYRINGBACKSTOP);
+
+  if (state == Session::STATE_RECEIVEDINITIATE)
+    channel_manager_->worker_thread()->Post(this, MSG_PLAYRINGSTART);
+
+  if (state == Session::STATE_SENTACCEPT)
+    channel_manager_->worker_thread()->Post(this, MSG_PLAYRINGSTOP);
+    
 }
 
 void VoiceChannel::SetSendCodec_w() {
