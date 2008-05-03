@@ -56,8 +56,10 @@ void ms_buffer_destroy(MSBuffer *buf)
 		g_free(buf);
 	}
 	else {
-		g_free(buf->buffer);
-		g_free(buf);
+	  if (buf != NULL) {
+	    if  (buf->buffer!=NULL) g_free(buf->buffer);
+	    g_free(buf);
+	  }
 	}
 }
 

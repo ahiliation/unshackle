@@ -277,6 +277,7 @@ void audio_stream_set_rtcp_information(AudioStream *st, const char *cname){
 void audio_stream_stop(AudioStream * stream)
 {
 	
+  if (stream != NULL) {
 	ms_stop(stream->timer);
 	ortp_global_stats_display();
 	ms_sync_detach(stream->timer,stream->soundread);
@@ -288,6 +289,7 @@ void audio_stream_stop(AudioStream * stream)
 	ms_filter_remove_links(stream->decoder,stream->soundwrite);
 	
 	audio_stream_free(stream);
+  }
 }
 
 RingStream * ring_start(gchar *file,gint interval,SndCard *sndcard)

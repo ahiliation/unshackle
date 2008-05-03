@@ -30,13 +30,14 @@ MSQueue * ms_queue_new()
 
 MSMessage *ms_queue_get(MSQueue *q)
 {
-	MSMessage *b=q->last;
-	if (b==NULL) return NULL;
-	q->last=b->prev;
-	if (b->prev==NULL) q->first=NULL; /* it was the only element of the queue*/
-     q->size--;
-     b->next=b->prev=NULL;
-	return(b);
+  MSMessage *b=q->last;
+  
+  if (b==NULL) return NULL;
+  q->last=b->prev;
+  if (b->prev==NULL) q->first=NULL; /* it was the only element of the queue*/
+  q->size--;
+  b->next=b->prev=NULL;
+  return(b);
 }
 
 void ms_queue_put(MSQueue *q, MSMessage *m)
