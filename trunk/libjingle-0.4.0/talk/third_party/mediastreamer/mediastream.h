@@ -63,7 +63,7 @@ struct _RingStream
 typedef struct _RingStream RingStream;
 
 /* start a thread that does sampling->encoding->rtp_sending|rtp_receiving->decoding->playing */
-AudioStream *audio_stream_start (RtpProfile * prof, int locport, char *remip,
+AudioStream *audio_stream_start (RtpProfile * prof, int locport, const char *remip,
 				 int remport, int profile, int jitt_comp);
 
 AudioStream *audio_stream_start_with_sndcards(RtpProfile * prof, int locport, char *remip4,
