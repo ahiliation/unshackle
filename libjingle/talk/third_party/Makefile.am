@@ -1,7 +1,7 @@
 if PHONE
 
 if !GIPS
-SUBDIRS=mediastreamer
+SUBDIRS=
 else
 SUBDIRS=gips 
 endif
