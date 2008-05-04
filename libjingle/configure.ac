@@ -70,7 +70,7 @@ else
 	AC_DEFINE(HAVE_ORTP, 1, [oRTP provides RTP supprt])
 fi
 
-MEDIA_LIBS="$PWD/talk/third_party/mediastreamer/libmediastreamer.la -lasound"
+MEDIA_LIBS="-lmediastreamer -lasound"
 
 dnl only accept speex>=1.1.6 or 1.0.5 (the versions that have speex_encode_int )
 AC_ARG_WITH( speex,
@@ -145,7 +145,6 @@ AC_OUTPUT([Makefile
           talk/base/Makefile
 	  talk/third_party/Makefile
           talk/third_party/gips/Makefile
-	  talk/third_party/mediastreamer/Makefile
 	  talk/examples/Makefile
 	  talk/examples/login/Makefile
 	  talk/examples/call/Makefile

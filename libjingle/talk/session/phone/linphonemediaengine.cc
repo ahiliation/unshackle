@@ -19,14 +19,11 @@
 
 // LinphoneMediaEngine is a Linphone implementation of MediaEngine
 extern "C" {
-#include "talk/third_party/mediastreamer/mediastream.h"
-#ifdef HAVE_ILBC
-#include "talk/third_party/mediastreamer/msilbcdec.h"
-#endif
-#ifdef HAVE_SPEEX
-#include "talk/third_party/mediastreamer/msspeexdec.h"
-#endif
+  //#include "talk/third_party/mediastreamer/mediastream.h"
+#include <mediastreamer2/mediastream.h>
+
 }
+
 #include <ortp/ortp.h>
 #include <ortp/telephonyevents.h>
 #include <netdb.h>
@@ -63,7 +60,8 @@ LinphoneMediaChannel::LinphoneMediaChannel(LinphoneMediaEngine*eng) :
 }
 
 LinphoneMediaChannel::~LinphoneMediaChannel() {
-  audio_stream_stop(audio_stream_);
+  if (audio_stream_ != NULL)
+    audio_stream_stop(audio_stream_);
 }
 
 void LinphoneMediaChannel::SetCodecs(const std::vector<Codec> &codecs) {
