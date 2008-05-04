@@ -95,7 +95,7 @@ void LinphoneMediaChannel::SetCodecs(const std::vector<Codec> &codecs) {
     if (first) {
       LOG(LS_INFO) << "Using " << i->name << "/" << i->clockrate;
       pt_ = i->id;
-      audio_stream_ = audio_stream_start(&av_profile, 2000, "127.0.0.1", 3000, i->id, 250);
+      audio_stream_ = audio_stream_start(&av_profile, 2000, "127.0.0.1", 3000, i->id, 250, 1); // turn on ec
       first = false;
     }
   }
@@ -104,7 +104,7 @@ void LinphoneMediaChannel::SetCodecs(const std::vector<Codec> &codecs) {
     // We're being asked to set an empty list of codecs. This will only happen when
     // working with a buggy client; let's try PCMU.
      LOG(LS_WARNING) << "Received empty list of codces; using PCMU/8000";
-    audio_stream_ = audio_stream_start(&av_profile, 2000, "127.0.0.1", 3000, 0, 250);
+     audio_stream_ = audio_stream_start(&av_profile, 2000, "127.0.0.1", 3000, 0, 250, 1); // turn on ec
   }
  
 }
