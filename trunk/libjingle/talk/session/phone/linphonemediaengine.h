@@ -23,7 +23,8 @@
 #define TALK_SESSION_PHONE_LINPHONEMEDIAENGINE_H_
 
 extern "C" {
-#include "talk/third_party/mediastreamer/mediastream.h"
+  //#include "talk/third_party/mediastreamer/mediastream.h"
+  #include <mediastreamer2/mediastream.h>
 }
 #include "talk/base/asyncsocket.h"
 #include "talk/base/scoped_ptr.h"
