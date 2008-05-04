@@ -62,6 +62,7 @@ VoiceChannel::VoiceChannel(ChannelManager *manager, Session *session,
 }
 
 VoiceChannel::~VoiceChannel() {
+
   assert(channel_manager_->worker_thread() == talk_base::Thread::Current());
   enabled_ = false;
   ChangeState();
@@ -132,10 +133,13 @@ void VoiceChannel::OnSessionState(Session* session, Session::State state) {
   }
 
   // vu3rdd - place to handle ring wav file playing
+  //printf ("session state is %d\n", state);
   if (state == Session::STATE_SENTINITIATE)
     channel_manager_->worker_thread()->Post(this, MSG_PLAYRINGBACKSTART);
 
-  if (state == Session::STATE_RECEIVEDACCEPT)
+  if ((state == Session::STATE_RECEIVEDACCEPT) || 
+      (state == Session::STATE_RECEIVEDREJECT) || 
+      (state == Session::STATE_SENTTERMINATE)) 
     channel_manager_->worker_thread()->Post(this, MSG_PLAYRINGBACKSTOP);
 
   if (state == Session::STATE_RECEIVEDINITIATE)
@@ -181,9 +185,12 @@ void VoiceChannel::SendPacket(const void *data, size_t len) {
 }
 
 void VoiceChannel::ChangeState() {
+
+  
   if (paused_ || !enabled_ || !writable_) {
     media_channel_->SetPlayout(false);
     media_channel_->SetSend(false);
+    
   } else {
     if (muted_) {
       media_channel_->SetSend(false);

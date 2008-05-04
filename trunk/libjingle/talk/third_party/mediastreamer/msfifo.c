@@ -123,7 +123,8 @@ void ms_fifo_update_write_ptr(MSFifo *fifo, gint written){
 	/* fix readsize and writesize */
 	fifo->readsize-=unwritten;
 	fifo->writesize+=unwritten;
-	fifo->wr_ptr+=written;
+	//fifo->wr_ptr+=written;
+	fifo->wr_ptr=fifo->prev_wr_ptr+written; //vu3rdd
 }
 
 gint ms_fifo_get_write_ptr(MSFifo *fifo, gint bsize, void **ret_ptr)
