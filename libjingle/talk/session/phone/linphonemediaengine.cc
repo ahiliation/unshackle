@@ -175,7 +175,6 @@ bool LinphoneMediaEngine::Init() {
   ms_init();
  
 #ifdef HAVE_SPEEX
-  ms_speex_codec_init();
 
   codecs_.push_back(Codec(110, payload_type_speex_wb.mime_type, payload_type_speex_wb.clock_rate, 0, 1, 8));
   codecs_.push_back(Codec(111, payload_type_speex_nb.mime_type, payload_type_speex_nb.clock_rate, 0, 1, 7));
@@ -183,7 +182,6 @@ bool LinphoneMediaEngine::Init() {
 #endif
 
 #ifdef HAVE_ILBC
-  ms_ilbc_codec_init();
   codecs_.push_back(Codec(102, payload_type_ilbc.mime_type, payload_type_ilbc.clock_rate, 0, 1, 4));
 #endif
 

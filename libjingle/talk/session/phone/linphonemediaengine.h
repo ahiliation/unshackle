@@ -30,6 +30,8 @@ extern "C" {
 #include "talk/base/scoped_ptr.h"
 #include "talk/session/phone/mediaengine.h"
 
+#include <glib.h>
+
 enum Ring {
   RING_CALL=0,
   RING_CALLBACK,
