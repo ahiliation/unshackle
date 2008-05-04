@@ -54,7 +54,7 @@ RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
   distclean-recursive maintainer-clean-recursive
 ETAGS = etags
 CTAGS = ctags
-DIST_SUBDIRS = mediastreamer gips
+DIST_SUBDIRS = gips
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 ALSA_LIBS = @ALSA_LIBS@
@@ -180,7 +180,7 @@ target_os = @target_os@
 target_vendor = @target_vendor@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-@GIPS_FALSE@@PHONE_TRUE@SUBDIRS = mediastreamer
+@GIPS_FALSE@@PHONE_TRUE@SUBDIRS = 
 @GIPS_TRUE@@PHONE_TRUE@SUBDIRS = gips 
 all: all-recursive
 
