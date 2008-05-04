@@ -23,10 +23,10 @@
 #define HAVE_GLIB 1
 
 /* Defined when we have ilbc codec lib */
-#define HAVE_ILBC 1
+/* #undef HAVE_ILBC */
 
 /* Define to 1 if you have the <iLBC_decode.h> header file. */
-#define HAVE_ILBC_DECODE_H 1
+/* #undef HAVE_ILBC_DECODE_H */
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
