@@ -157,6 +157,7 @@ void ms_speex_enc_uninit_core(MSSpeexEnc *obj)
 {
 	if (obj->initialized){
 		speex_encoder_destroy(obj->speex_state);
+		speex_bits_destroy(&obj->bits);
 		obj->initialized=0;
 	}
 }

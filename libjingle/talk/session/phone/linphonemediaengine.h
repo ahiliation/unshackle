@@ -29,6 +29,12 @@ extern "C" {
 #include "talk/base/scoped_ptr.h"
 #include "talk/session/phone/mediaengine.h"
 
+enum Ring {
+  RING_CALL=0,
+  RING_CALLBACK,
+  RING_BUSY
+};
+
 namespace cricket {
 
 class LinphoneMediaEngine;
@@ -50,7 +56,7 @@ class LinphoneMediaChannel : public MediaChannel {
 
   virtual void StartMediaMonitor(VoiceChannel * voice_channel, uint32 cms) {}
   virtual void StopMediaMonitor() {}
-   
+
  private:
   LinphoneMediaEngine *engine_;
   AudioStream *audio_stream_;
@@ -78,6 +84,9 @@ class LinphoneMediaEngine : public MediaEngine {
   
   virtual std::vector<Codec, std::allocator<Codec> > codecs() {return codecs_;}
   virtual bool FindCodec(const Codec&);
+
+  virtual void StartRingPlay (Ring ring);
+  virtual void StopRingPlay ();
 
  private:
   std::vector<Codec, std::allocator<Codec> > codecs_;

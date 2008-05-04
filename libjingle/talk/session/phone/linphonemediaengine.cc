@@ -111,6 +111,14 @@ void LinphoneMediaChannel::SetCodecs(const std::vector<Codec> &codecs) {
  
 }
 
+void LinphoneMediaEngine::StartRingPlay (Ring ring) {
+
+}
+
+void LinphoneMediaEngine::StopRingPlay () {
+
+}
+
 bool LinphoneMediaEngine::FindCodec(const Codec &c) {
   if (c.id == 0)
     return true;

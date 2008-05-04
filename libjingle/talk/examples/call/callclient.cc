@@ -275,6 +275,8 @@ void CallClient::OnSessionState(cricket::Call* call,
     console_->Print("call in progress");
   } else if (state == cricket::Session::STATE_RECEIVEDTERMINATE) {
     console_->Print("other side hung up");
+  } else if (state == cricket::Session::STATE_SENTTERMINATE) {
+    console_->Print("call terminated");
   }
  }
 

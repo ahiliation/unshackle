@@ -171,6 +171,7 @@ void ms_speex_dec_class_init(MSSpeexDecClass *klass)
 void ms_speex_dec_uninit_core(MSSpeexDec *obj)
 {
 	speex_decoder_destroy(obj->speex_state);
+	speex_bits_destroy(&obj->bits);
 	obj->initialized=0;
 }
 
@@ -191,7 +192,7 @@ void ms_speex_dec_process(MSSpeexDec *obj)
 	MSQueue *inq=obj->inq[0];
 	gint16 *output;
 	gint gran=obj->frame_size*2;
-	gint i;
+	gint i, ret;
 	MSMessage *m;
 	
 	g_return_if_fail(inq!=NULL);
@@ -206,7 +207,9 @@ void ms_speex_dec_process(MSSpeexDec *obj)
 		
 		speex_bits_read_from(&obj->bits,m->data,m->size);
 		/* decode */
-		speex_decode_int(obj->speex_state,&obj->bits,(short*)output);
+		ret = 1;
+		while ((ret != -1) && (speex_bits_remaining(&obj->bits) > 0))   
+		  ret = speex_decode_int(obj->speex_state,&obj->bits,(short*)output);
 	}else{
 		/* we have a missing packet */
 		speex_decode_int(obj->speex_state,NULL,(short*)output);

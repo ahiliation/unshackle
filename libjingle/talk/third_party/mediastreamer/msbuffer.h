@@ -48,7 +48,8 @@ void ms_buffer_destroy(MSBuffer *buf);
 struct _MSMessage
 {
    MSBuffer *buffer; /* points to a MSBuffer */
-   void *data;          /*points to buffer->buffer  */
+   //void *data;          /*points to buffer->buffer  */
+   char *data;          /*points to buffer->buffer  */ // vu3rdd
    guint32 size;   /* the size of the buffer to read in data. It may not be the
    								physical size (I mean buffer->buffer->size */
    struct _MSMessage *next;
