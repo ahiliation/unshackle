@@ -54,7 +54,7 @@ RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
   distclean-recursive maintainer-clean-recursive
 ETAGS = etags
 CTAGS = ctags
-DIST_SUBDIRS = mediastreamer gips
+DIST_SUBDIRS = gips
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = ${SHELL} /home/vu3rdd/src/jingle/unshackle/libjingle/missing --run aclocal-1.10
 ALSA_LIBS = -lasound
@@ -89,8 +89,8 @@ FFLAGS = -g -O2
 GLIB_CFLAGS = -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  
 GLIB_LIBS = -Wl,--export-dynamic -pthread -lgmodule-2.0 -ldl -lgthread-2.0 -lrt -lglib-2.0  
 GREP = /bin/grep
-ILBC_CFLAGS =  -I/usr/local/include/ilbc
-ILBC_LIBS = -L/usr/local/lib -lilbc -lm
+ILBC_CFLAGS = 
+ILBC_LIBS = 
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -103,7 +103,7 @@ LIBTOOL = $(SHELL) $(top_builddir)/libtool --silent
 LN_S = ln -s
 LTLIBOBJS = 
 MAKEINFO = ${SHELL} /home/vu3rdd/src/jingle/unshackle/libjingle/missing --run makeinfo
-MEDIA_LIBS = /home/vu3rdd/src/jingle/unshackle/libjingle/talk/third_party/mediastreamer/libmediastreamer.la -lasound
+MEDIA_LIBS = -lmediastreamer -lasound
 MKDIR_P = /bin/mkdir -p
 NMEDIT = 
 OBJEXT = o
@@ -180,7 +180,7 @@ target_os = linux-gnu
 target_vendor = unknown
 top_builddir = ../..
 top_srcdir = ../..
-SUBDIRS = mediastreamer
+SUBDIRS = 
 #SUBDIRS = gips 
 all: all-recursive
 
