@@ -20558,7 +20558,7 @@ _ACEOF
 
 fi
 
-MEDIA_LIBS="$PWD/talk/third_party/mediastreamer/libmediastreamer.la -lasound"
+MEDIA_LIBS="-lmediastreamer -lasound"
 
 
 # Check whether --with-speex was given.
@@ -21298,7 +21298,7 @@ fi
 
 
 
-ac_config_files="$ac_config_files Makefile talk/Makefile talk/base/Makefile talk/third_party/Makefile talk/third_party/gips/Makefile talk/third_party/mediastreamer/Makefile talk/examples/Makefile talk/examples/login/Makefile talk/examples/call/Makefile talk/examples/pcp/Makefile talk/p2p/Makefile talk/p2p/base/Makefile talk/p2p/client/Makefile talk/session/Makefile talk/session/fileshare/Makefile talk/session/tunnel/Makefile talk/session/phone/Makefile talk/xmllite/Makefile talk/xmpp/Makefile"
+ac_config_files="$ac_config_files Makefile talk/Makefile talk/base/Makefile talk/third_party/Makefile talk/third_party/gips/Makefile talk/examples/Makefile talk/examples/login/Makefile talk/examples/call/Makefile talk/examples/pcp/Makefile talk/p2p/Makefile talk/p2p/base/Makefile talk/p2p/client/Makefile talk/session/Makefile talk/session/fileshare/Makefile talk/session/tunnel/Makefile talk/session/phone/Makefile talk/xmllite/Makefile talk/xmpp/Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -21905,7 +21905,6 @@ do
     "talk/base/Makefile") CONFIG_FILES="$CONFIG_FILES talk/base/Makefile" ;;
     "talk/third_party/Makefile") CONFIG_FILES="$CONFIG_FILES talk/third_party/Makefile" ;;
     "talk/third_party/gips/Makefile") CONFIG_FILES="$CONFIG_FILES talk/third_party/gips/Makefile" ;;
-    "talk/third_party/mediastreamer/Makefile") CONFIG_FILES="$CONFIG_FILES talk/third_party/mediastreamer/Makefile" ;;
     "talk/examples/Makefile") CONFIG_FILES="$CONFIG_FILES talk/examples/Makefile" ;;
     "talk/examples/login/Makefile") CONFIG_FILES="$CONFIG_FILES talk/examples/login/Makefile" ;;
     "talk/examples/call/Makefile") CONFIG_FILES="$CONFIG_FILES talk/examples/call/Makefile" ;;
