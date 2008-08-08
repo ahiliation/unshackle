@@ -31,6 +31,7 @@
 #include <vector>
 #include <queue>
 #include <algorithm>
+#include <cstring>
 #include "talk/base/basictypes.h"
 #include "talk/base/criticalsection.h"
 #include "talk/base/socketserver.h"

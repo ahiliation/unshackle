@@ -34,6 +34,8 @@
 #include "talk/base/stream.h"
 #include "talk/base/stringencode.h"
 
+#include <cstring>
+
 #ifdef WIN32
 #include "talk/base/win32.h"
 #define fileno _fileno

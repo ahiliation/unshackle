@@ -35,6 +35,9 @@
 #include "talk/base/time.h"
 #include "talk/p2p/base/pseudotcp.h"
 
+#include <cstdlib>
+
+
 #ifdef POSIX
 extern "C" {
 #include <errno.h>
