@@ -28,9 +28,12 @@
 #ifndef _TALK_BASE_CRYPTSTRING_H_
 #define _TALK_BASE_CRYPTSTRING_H_
 
+#include <cstring>
 #include <string>
+#include <cstdlib>
 #include "talk/base/linked_ptr.h"
 #include "talk/base/scoped_ptr.h"
+
 
 namespace talk_base {
 

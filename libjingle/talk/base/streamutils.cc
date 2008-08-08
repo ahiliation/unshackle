@@ -29,6 +29,8 @@
 #include "talk/base/common.h"
 #include "talk/base/streamutils.h"
 
+#include <cstring>
+
 ///////////////////////////////////////////////////////////////////////////////
 // TODO: Extend so that one side can close, and other side can send
 // buffered data.
